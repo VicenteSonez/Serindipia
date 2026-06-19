@@ -64,12 +64,9 @@ st.markdown("**Autores**: Vicente Soñez Ibañez, Rafael Fernández Castellón, 
 def load_data():
     import os
     current_dir = os.path.abspath(os.path.dirname(__file__))
-    base_dir = os.path.dirname(current_dir)
     
     # Búsqueda resiliente (útil para servidores Linux que son sensibles a mayúsculas/minúsculas)
     posibles_rutas_parquet = [
-        os.path.join(base_dir, 'Data', 'casen_2024.parquet'),
-        os.path.join(base_dir, 'data', 'casen_2024.parquet'),
         os.path.join(current_dir, 'Data', 'casen_2024.parquet'),
         os.path.join(current_dir, 'data', 'casen_2024.parquet')
     ]
