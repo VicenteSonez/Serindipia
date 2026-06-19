@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+plotly
+geopandas
+pyogrio
+esda
+libpysal
+fastparquet
+shapely
