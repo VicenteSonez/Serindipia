@@ -82,7 +82,12 @@ def load_data():
         
     geojson_path = parquet_path.replace('casen_2024.parquet', 'regiones.geojson')
 
-    df = pd.read_parquet(parquet_path)
+    # Columnas estrictamente necesarias para los gráficos
+    cols_necesarias = [
+        'educc', 'qaut', 'activ', 'cinef13_area', 'sexo', 
+        'ytrabajocor', 'region', 'yoprcor', 'area', 'edad'
+    ]
+    df = pd.read_parquet(parquet_path, columns=cols_necesarias)
     try:
         gdf = gpd.read_file(geojson_path, engine='pyogrio')
     except:
