@@ -88,7 +88,10 @@ def load_data():
         'ytrabajocor', 'region', 'yoprcor', 'area', 'edad'
     ]
     df = pd.read_parquet(parquet_path, columns=cols_necesarias)
-    gdf = gpd.read_file(geojson_path)
+    try:
+        gdf = gpd.read_file(geojson_path, engine='pyogrio')
+    except:
+        gdf = gpd.read_file(geojson_path)
         
     # Filtrar Isla de Pascua y Juan Fernández para visualización de Chile Continental
     from shapely.geometry import MultiPolygon
