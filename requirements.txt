@@ -3,8 +3,7 @@ pandas
 numpy
 plotly
 geopandas
-pyogrio
 esda
 libpysal
-fastparquet
+pyarrow
 shapely
